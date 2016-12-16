@@ -1,0 +1,23 @@
+{{ define "home" }}
+{{ template "header" . }}
+<div class="container">
+
+    {{if .Err}}
+    <div class="alert alert-danger bs-alert-old-docs">Unable to login</div>
+    {{end}}
+
+  <form class="form-signin" method="post" action="/login">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <input type="text" class="input-block-level" placeholder="Login" name="login">
+    <input type="password" class="input-block-level" placeholder="Password" name="passwd">
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+    <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+  </form>
+
+
+</div> <!-- /container -->
+
+{{ template "footer" . }}
+{{ end }}

@@ -1,0 +1,9 @@
+{{ define "products" }}
+{{ template "header" . }}
+{{if .UserList}}
+    {{range .UserList}}
+        User {{.Name}} can be contacted at <a href="mailto:{{.Email}}">{{.Email}}</a><br/>
+    {{end}}
+{{end}}
+{{ template "footer" . }}
+{{ end }}
